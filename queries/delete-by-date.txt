@@ -1,0 +1,14 @@
+POST /loggingtest-development-2020-06/_delete_by_query
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "range": {
+          "@timestamp": {
+            "lte": "2020-06-23T16:50:00+01:00"
+          }
+        }
+      }
+    }
+  }
+}
