@@ -17,6 +17,9 @@ services:
     - discovery.type=single-node
    networks:
     - elastic
+   deploy:
+    restart_policy:
+     condition: always
 
   kibana:
    container_name: kibana
@@ -29,6 +32,9 @@ services:
     - elastic
    volumes:
     - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+   deploy:
+    restart_policy:
+     condition: always
   
 networks:
   elastic:
